@@ -1,0 +1,27 @@
+version: '3'
+services:
+  frontend:
+    container_name: "frontend"
+    build: frontend/
+    ports:
+        - "8888:80"
+    depends_on:
+        - backend
+  backend:
+    container_name: backend
+    build: './backend'
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - database
+    links:
+      - database
+    ports:
+      - '3000:3000'
+  database:
+    image: 'mongo'
+    container_name: database
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/db:/data/db
