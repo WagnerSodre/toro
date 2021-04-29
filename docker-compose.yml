@@ -2,14 +2,14 @@ version: '3'
 services:
   frontend:
     container_name: "frontend"
-    build: frontend/
+    build: './toro-frontend'
     ports:
         - "8888:80"
     depends_on:
         - backend
   backend:
-    container_name: backend
-    build: './backend'
+    container_name: "backend"
+    build: './toro-backend'
     environment:
       NODE_ENV: development
     depends_on:

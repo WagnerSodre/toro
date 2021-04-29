@@ -1,0 +1,6 @@
+[submodule "toro-frontend"]
+	path = toro-frontend
+	url = https://github.com/WagnerSodre/toro-frontend
+[submodule "toro-backend"]
+	path = toro-backend
+	url = https://github.com/WagnerSodre/toro-backend
